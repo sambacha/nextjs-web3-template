@@ -1,34 +1,51 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<p align="center"><img src="public/logo.svg" align="center" width="250"></p>
+<h2 align="center">Next.js Web3 template</h2>
 
-## Getting Started
+<p align="center"><b>🏗️ Next.js + Material UI + dark mode + web3 starter template ⚡</b></p>
 
-First, run the development server:
+This is a starter boilerplate Ethereum dapp using Next.js and material UI with dark mode. There are many web3 template available but most of them depends of web3-react. I tried to use minimum dependencies possible.
+
+### Quick start
+
+The first things you need to do is clone repo.
+
+To compile and deploy contract
 
 ```bash
-npm run dev
-# or
-yarn dev
+cd deploy
+npm i
+npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Run the client on base directory
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+```bash
+yarn install
+yarn run dev
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+#### Project Structure
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```
+├── contracts          // All solidity files
+│    ├── Example.sol
+├── deploy
+│    ├── compile.js    // compiles contracts
+│    ├── deploy.js     // deploy and get abi and bytecode
+│    ├── package.json
+├── pages              // All pages of nextjs
+│    ├── _app.js
+│    ├── _documesnt.js
+├── public             // contains static files
+│    ├── img
+│    ├── icons
+├── src
+│    ├── contracts     // here we store abi and bytecodes of contracts
+│    ├── components    // react components
+│    ├── hooks         // web and imp hooks
+│    ├── utils         // theme and other lib files
+├── .env
+├── .gitignore
+├── package.json
+└── README.md
+```

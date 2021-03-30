@@ -17,8 +17,8 @@ const Index = () => {
           Next.js + Material UI + dark mode + web3 starter template. Boilerplate to get starter quickly.
         </Typography>
       </div>
-      <Link href="/about">
-        <a className={classes.text}>About</a>
+      <Link href="/">
+        <a className={classes.text}>Home</a>
       </Link>
     </main>
   );
