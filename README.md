@@ -7,6 +7,8 @@ This is a starter boilerplate Ethereum dapp using Next.js and material UI with
 dark mode. There are many web3 template available but most of them depends of
 web3-react. I tried to use minimum dependencies possible.
 
+![](./.github/stack.svg)
+
 ### Quick start
 
 The first things you need to do is clone repo.
