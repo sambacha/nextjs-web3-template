@@ -1,7 +1,7 @@
-import { useState } from 'react'
-import { ethers } from "ethers";
-import Web3Modal from "web3modal";
-import WalletConnectProvider from "@walletconnect/web3-provider";
+import { useState } from 'react';
+import { ethers } from 'ethers';
+import Web3Modal from 'web3modal';
+import WalletConnectProvider from '@walletconnect/web3-provider';
 
 const providerOptions = {
   walletconnect: {
@@ -13,7 +13,7 @@ const providerOptions = {
 };
 
 const web3Modal = new Web3Modal({
-  network: "kovan",
+  network: 'kovan',
   cacheProvider: true,
   providerOptions,
 });
@@ -31,10 +31,12 @@ export function useWeb3Modal() {
   async function connectWallet() {
     try {
       const externalProvider = await web3Modal.connect();
-      const ethersProvider = new ethers.providers.Web3Provider(externalProvider);
-  
+      const ethersProvider = new ethers.providers.Web3Provider(
+        externalProvider,
+      );
+
       setProvider(ethersProvider);
-    } catch(e) {
+    } catch (e) {
       setError('NO_WALLET_CONNECTED');
       console.log('NO_WALLET_CONNECTED', e);
     }
@@ -45,5 +47,5 @@ export function useWeb3Modal() {
     setProvider(undefined);
   }
 
-  return { connectWallet, disconnectWallet, provider, error }
+  return { connectWallet, disconnectWallet, provider, error };
 }

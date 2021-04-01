@@ -1,18 +1,18 @@
-import React, { useEffect, useState } from "react";
-import Blockies from "react-blockies";
+import React, { useEffect, useState } from 'react';
+import Blockies from 'react-blockies';
 
 import { makeStyles } from '@material-ui/core/styles';
 
-import { useWeb3Modal } from "../hooks/web3";
+import { useWeb3Modal } from '../hooks/web3';
 
 const truncateAddress = (address) => {
-  return address.slice(0, 6) + "..." + address.slice(-4);
+  return address.slice(0, 6) + '...' + address.slice(-4);
 };
 
 const ConnectWallet = () => {
   const classes = useStyles();
 
-  const [signerAddress, setSignerAddress] = useState("");
+  const [signerAddress, setSignerAddress] = useState('');
   // const [isWaiting, setWaiting] = useState(false)
   // const [isSent, setSent] = useState(false)
   // const [walletNotDetected, setWalletNotDetected] = useState(false)
@@ -24,9 +24,9 @@ const ConnectWallet = () => {
       const signer = provider.getSigner();
       const address = await signer.getAddress();
       setSignerAddress(address);
-    }
+    };
     if (provider) getAddress();
-    else setSignerAddress("");
+    else setSignerAddress('');
   }, [provider]);
 
   const handleClickConnect = async () => {
@@ -40,7 +40,8 @@ const ConnectWallet = () => {
   return (
     <button
       className={classes.btn}
-      onClick={signerAddress ? handleClickAddress : handleClickConnect}>
+      onClick={signerAddress ? handleClickAddress : handleClickConnect}
+    >
       <Blockies
         className={classes.img}
         seed={signerAddress.toLowerCase()}
@@ -48,11 +49,11 @@ const ConnectWallet = () => {
         scale={3}
       />
       <div>
-        {signerAddress ? truncateAddress(signerAddress) : "Connect Wallet"}
+        {signerAddress ? truncateAddress(signerAddress) : 'Connect Wallet'}
       </div>
     </button>
   );
-}
+};
 
 const useStyles = makeStyles((theme) => ({
   btn: {
@@ -63,12 +64,12 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: 9999,
     height: 35,
     display: 'flex',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   img: {
     borderRadius: 999,
-    marginRight: 5
-  }
+    marginRight: 5,
+  },
 }));
 
 export default ConnectWallet;
