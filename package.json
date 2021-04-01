@@ -1,11 +1,13 @@
 {
   "name": "nextjs-web3-starter",
+  "private": true,
   "version": "1.0.0",
-  "author": "Aman Raj <archanaamanraj@gmail.com>",
   "scripts": {
-    "dev": "next",
-    "build": "next build",
-    "start": "next start"
+    "dev": "npx next",
+    "build": "npx next build",
+    "start": "npx next start",
+    "lint": "npx prettier --config .prettierrc.json --write .",
+    "test": "npx jest -u --passWithNoTests"
   },
   "homepage": "https://github.com/AmanRaj1608/nextjs-web3-template",
   "license": "MIT",
@@ -22,10 +24,16 @@
     "web3modal": "^1.9.3"
   },
   "devDependencies": {
+    "@babel/core": "^7.11.4",
+    "@wojtekmaj/enzyme-adapter-react-17": "^0.6.0",
+    "babel-jest": "^26.3.0",
+    "enzyme": "^3.11.0",
     "eslint": "^7.23.0",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-react": "^7.23.1",
+    "jest": "^26.4.2",
+    "jest-enzyme": "^7.1.2",
     "prettier": "^2.2.1"
   }
 }
