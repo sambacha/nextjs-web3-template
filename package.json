@@ -24,7 +24,7 @@
     "web3modal": "1.9.3"
   },
   "devDependencies": {
-    "@babel/core": "7.13.14",
+    "@babel/core": "7.14.5",
     "@wojtekmaj/enzyme-adapter-react-17": "0.6.0",
     "babel-jest": "26.6.3",
     "enzyme": "3.11.0",
