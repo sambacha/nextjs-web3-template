@@ -1,0 +1,7 @@
+# Ignore all CSS files:
+*.css
+*.min.js
+*.html
+*.svg
+*.scss
+*.xml
